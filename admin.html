@@ -717,7 +717,9 @@
                             </div>
                             <div class="asset-actions">
                                 <input type="file" id="logoInput" accept="image/jpeg,image/png,image/webp" hidden />
-                                <button type="button" class="btn btn-secondary" id="logoUploadBtn">Upload / Ganti</button>
+                                <button type="button" class="btn btn-secondary" id="logoUploadBtn">
+                                    Upload / Ganti
+                                </button>
                                 <button type="button" class="small-btn danger" id="logoDeleteBtn" hidden>Hapus</button>
                             </div>
                         </div>
@@ -729,8 +731,12 @@
                             </div>
                             <div class="asset-actions">
                                 <input type="file" id="bannerInput" accept="image/jpeg,image/png,image/webp" hidden />
-                                <button type="button" class="btn btn-secondary" id="bannerUploadBtn">Upload / Ganti</button>
-                                <button type="button" class="small-btn danger" id="bannerDeleteBtn" hidden>Hapus</button>
+                                <button type="button" class="btn btn-secondary" id="bannerUploadBtn">
+                                    Upload / Ganti
+                                </button>
+                                <button type="button" class="small-btn danger" id="bannerDeleteBtn" hidden>
+                                    Hapus
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -1341,7 +1347,12 @@
                 if (!file || !id) return;
                 try {
                     // Foto kategori: dipotong persegi & diresize ke 500×500 WebP.
-                    await uploadAssetFile('uploadCategoryImage', file, { id }, { square: true, size: 500, quality: 0.85 });
+                    await uploadAssetFile(
+                        'uploadCategoryImage',
+                        file,
+                        { id },
+                        { square: true, size: 500, quality: 0.85 }
+                    );
                     toast('Foto kategori berhasil diperbarui.');
                     await loadAll();
                 } catch (err) {
